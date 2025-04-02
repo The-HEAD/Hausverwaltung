@@ -1,5 +1,5 @@
 import type React from "react";
-import { createContext, useState, useContext, type ReactNode, useEffect } from "react"
+import { createContext, useState, useContext, type ReactNode } from "react"
 import type {
   Property,
   Apartment,
@@ -7,16 +7,13 @@ import type {
   Contract,
   ID
 } from "@/models/types";
-import mysql from 'mysql2/promise';
-
-const dbConfig = {
-  host: 'localhost',
-  user: 'web1_test1',
-  password: '!Qayxsw2',
-  database: 'web1_test'
-};
-
-const pool = mysql.createPool(dbConfig);
+import {
+  mockProperties,
+  mockApartments,
+  mockTenants,
+  mockContracts,
+  generateId
+} from "@/models/mockData";
 
 interface PropertyContextType {
   // Datenlisten
